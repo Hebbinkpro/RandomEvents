@@ -1,0 +1,46 @@
+# minimal players that must be online to start a random event.
+minPlayersOnline: 15
+
+# The cooldown that starts after an event. If this cooldown is over a new event can start
+cooldown:
+  hours: 12
+  days: 0
+
+# If this timer is over an event has 100% change to start if the minimal players are online
+timer:
+  hours: 12
+  days: 0
+
+# The events that can trigger
+events:
+  # The players must go to a specified location (x,y,z), the first player who found the place wins
+  GoToLocation:
+    # List of locations. The game will pick a random location. If you don't setup a Y every Y coordinate is correct
+    locations:
+      - x: 0
+        y: 73
+        z: 24
+      - x: 202
+        z: 69
+
+    # The money that a winning player receives (requires MultiEconomy)
+    reward: 100
+
+  BountyHunter:
+    # When the startDelay is over the game will begin. The start delay starts when the target is choosed. (startDelay in minutes)
+    startDelay: 5
+
+    # The after each pingTime the location of the target will be checked.
+    # If the target is after the pingTime less than the minDistance of his last location the game will be restarted
+    # pingTime in minutes, minDistance in blocks
+    pingTime: 2
+    minDistance: 20
+
+    # When the player logsout during the game the game restarts when true and stops when false
+    restartWhenOffline: true
+
+    # When the target is still alive after this time the target wins (in minutes)
+    endTime: 30
+
+    # The money that the winning player receives (requires MultiEconomy)
+    reward: 200

@@ -1,0 +1,15 @@
+name: RandomEventsTDB
+description: Start random events
+author: Hebbinkpro
+version: 1.0.0
+main: Hebbinkpro\RandomEventsTDB\Main
+api: 3.14.3
+
+permissions:
+  re.cmd:
+    default: op
+    description: access to /re command
+    children:
+      re.cmd.start:
+        default: op
+        description: start a new event
